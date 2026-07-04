@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificates — Keamogetswe Modiakgotla</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Keamogetswe</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="projects.html">projects</a>
+      <a href="certificates.html" class="active">certificates</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">My Growth</span>
+    <h1>Certificates &amp; Achievements</h1>
+    <p class="section-sub">Click any certificate to view the full version.</p>
+  </div>
+
+  <section style="border-top:none; padding-top:10px;">
+    <div class="cert-grid">
+
+      <button class="cert-card" data-img="assets/certificates/kaggle-python.jpeg"
+        data-title="Python — Certificate of Completion" data-meta="Kaggle · June 2026">
+        <div class="cert-thumb"><img src="assets/certificates/kaggle-python.jpeg" alt="Kaggle Python certificate" loading="lazy"></div>
+        <div class="cert-info">
+          <h3>Python</h3>
+          <div class="meta">Kaggle · June 2026</div>
+          <span class="view">View certificate →</span>
+        </div>
+      </button>
+
+      <button class="cert-card" data-img="assets/certificates/wethinkcode-genai.png"
+        data-title="GenAI Course for Software Engineers" data-meta="WeThinkCode_ · May 2026">
+        <div class="cert-thumb"><img src="assets/certificates/wethinkcode-genai.png" alt="WeThinkCode GenAI certificate" loading="lazy"></div>
+        <div class="cert-info">
+          <h3>GenAI for Software Engineers</h3>
+          <div class="meta">WeThinkCode_ · May 2026</div>
+          <span class="view">View certificate →</span>
+        </div>
+      </button>
+
+      <button class="cert-card" data-img="assets/certificates/future-interns-certificate.png"
+        data-title="Data Science &amp; Analytics Internship" data-meta="Future Interns · Apr–May 2026">
+        <div class="cert-thumb"><img src="assets/certificates/future-interns-certificate.png" alt="Future Interns certificate" loading="lazy"></div>
+        <div class="cert-info">
+          <h3>Data Science &amp; Analytics Internship</h3>
+          <div class="meta">Future Interns · Apr–May 2026</div>
+          <span class="view">View certificate →</span>
+        </div>
+      </button>
+
+      <button class="cert-card" data-img="assets/certificates/future-interns-lor.png"
+        data-title="Letter of Recommendation" data-meta="Future Interns · May 2026">
+        <div class="cert-thumb"><img src="assets/certificates/future-interns-lor.png" alt="Future Interns letter of recommendation" loading="lazy"></div>
+        <div class="cert-info">
+          <h3>Letter of Recommendation</h3>
+          <div class="meta">Future Interns · May 2026</div>
+          <span class="view">View certificate →</span>
+        </div>
+      </button>
+
+      <button class="cert-card" data-img="assets/certificates/amld-africa-2026.png"
+        data-title="AMLD Africa 2026 — Certificate of Attendance" data-meta="Applied ML Days Africa, Johannesburg">
+        <div class="cert-thumb"><img src="assets/certificates/amld-africa-2026.png" alt="AMLD Africa 2026 certificate" loading="lazy"></div>
+        <div class="cert-info">
+          <h3>AMLD Africa 2026</h3>
+          <div class="meta">Certificate of Attendance</div>
+          <span class="view">View certificate →</span>
+        </div>
+      </button>
+
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Keamogetswe Oratile Modiakgotla</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', ()=>{
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.cert-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      lightboxImg.src = card.dataset.img;
+      lightboxImg.alt = card.dataset.title;
+      lightboxCaption.textContent = card.dataset.title + ' — ' + card.dataset.meta;
+      lightbox.classList.add('open');
+    });
+  });
+
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

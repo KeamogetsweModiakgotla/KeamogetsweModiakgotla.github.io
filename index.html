@@ -1,754 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keamogetswe Oratile Modiakgotla — Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Keamogetswe Oratile Modiakgotla, BSc Computer Science student at Wits, aspiring software developer."
-    />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keamogetswe Modiakgotla — Portfolio</title>
+<meta name="description" content="Portfolio of Keamogetswe Oratile Modiakgotla, Computer Science student at the University of the Witwatersrand.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-      :root {
-        --navy-deep: #0b1e33;
-        --navy-panel: #122a4a;
-        --navy-line: rgba(255, 255, 255, 0.09);
-        --navy-line-strong: rgba(255, 255, 255, 0.18);
-        --amber: #e8a33d;
-        --cyan: #5fd4d0;
-        --ink: #eaf2fa;
-        --ink-muted: #93a9c2;
-        --radius: 2px;
-        --sheet-max: 980px;
-      }
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Keamogetswe</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">home</a>
+      <a href="about.html">about</a>
+      <a href="projects.html">projects</a>
+      <a href="certificates.html">certificates</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
 
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        margin: 0;
-        background: var(--navy-deep);
-        color: var(--ink);
-        font-family: "IBM Plex Sans", sans-serif;
-        line-height: 1.6;
-        background-image:
-          linear-gradient(var(--navy-line) 1px, transparent 1px),
-          linear-gradient(90deg, var(--navy-line) 1px, transparent 1px);
-        background-size: 32px 32px;
-      }
-
-      a {
-        color: var(--cyan);
-      }
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid var(--amber);
-        outline-offset: 3px;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-family: "Space Grotesk", sans-serif;
-        margin: 0;
-        letter-spacing: 0.01em;
-      }
-      .mono {
-        font-family: "IBM Plex Mono", monospace;
-      }
-
-      .wrap {
-        max-width: var(--sheet-max);
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      /* Registration / crosshair corner marks, recurring motif */
-      .sheet {
-        position: relative;
-        border: 1px solid var(--navy-line-strong);
-        background: rgba(18, 42, 74, 0.55);
-        margin: 48px 0;
-        padding: 44px 40px;
-        border-radius: var(--radius);
-      }
-      .sheet::before,
-      .sheet::after,
-      .sheet .cm-tr,
-      .sheet .cm-bl {
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        border: 1px solid var(--amber);
-      }
-      .sheet::before {
-        top: -1px;
-        left: -1px;
-        border-right: none;
-        border-bottom: none;
-      }
-      .sheet::after {
-        bottom: -1px;
-        right: -1px;
-        border-left: none;
-        border-top: none;
-      }
-      .sheet .cm-tr {
-        top: -1px;
-        right: -1px;
-        border-left: none;
-        border-bottom: none;
-      }
-      .sheet .cm-bl {
-        bottom: -1px;
-        left: -1px;
-        border-right: none;
-        border-top: none;
-      }
-
-      .sheet-label {
-        position: absolute;
-        top: -13px;
-        left: 32px;
-        background: var(--navy-deep);
-        padding: 0 10px;
-        font-size: 0.72rem;
-        letter-spacing: 0.12em;
-        color: var(--amber);
-        text-transform: uppercase;
-      }
-
-      /* HERO / TITLE BLOCK */
-      header.hero {
-        padding: 64px 24px 0;
-      }
-      .hero-inner {
-        max-width: var(--sheet-max);
-        margin: 0 auto;
-      }
-      .eyebrow {
-        font-size: 0.78rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--cyan);
-        margin-bottom: 14px;
-      }
-      .hero h1 {
-        font-size: clamp(2.1rem, 5vw, 3.4rem);
-        font-weight: 700;
-        color: var(--ink);
-        max-width: 14ch;
-      }
-      .hero .role {
-        margin-top: 14px;
-        font-size: clamp(1.05rem, 2vw, 1.3rem);
-        color: var(--ink-muted);
-        max-width: 42ch;
-      }
-
-      .titleblock {
-        margin-top: 44px;
-        border: 1px solid var(--navy-line-strong);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-      }
-      .titleblock .cell {
-        padding: 14px 18px;
-        border-right: 1px solid var(--navy-line-strong);
-        border-top: 1px solid var(--navy-line-strong);
-      }
-      .titleblock .cell:nth-child(4n) {
-        border-right: none;
-      }
-      .titleblock .cell:nth-child(-n + 4) {
-        border-top: none;
-      }
-      .titleblock .label {
-        font-size: 0.66rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--ink-muted);
-        margin-bottom: 4px;
-      }
-      .titleblock .value {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.92rem;
-        color: var(--ink);
-      }
-
-      @media (max-width: 640px) {
-        .titleblock {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .titleblock .cell:nth-child(4n) {
-          border-right: 1px solid var(--navy-line-strong);
-        }
-        .titleblock .cell:nth-child(2n) {
-          border-right: none;
-        }
-        .titleblock .cell:nth-child(-n + 2) {
-          border-top: none;
-        }
-      }
-
-      /* NAV */
-      nav.spec {
-        margin-top: 40px;
-        display: flex;
-        gap: 0;
-        flex-wrap: wrap;
-        border-top: 1px solid var(--navy-line-strong);
-        border-bottom: 1px solid var(--navy-line-strong);
-      }
-      nav.spec a {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.78rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--ink-muted);
-        text-decoration: none;
-        padding: 12px 18px;
-        border-right: 1px solid var(--navy-line);
-      }
-      nav.spec a:hover,
-      nav.spec a:focus-visible {
-        color: var(--amber);
-      }
-
-      /* SECTION HEADINGS */
-      .sheet h2 {
-        font-size: 1.6rem;
-        color: var(--ink);
-        margin-bottom: 6px;
-      }
-      .sheet .sheet-sub {
-        color: var(--ink-muted);
-        font-size: 0.9rem;
-        margin-bottom: 28px;
-        font-family: "IBM Plex Mono", monospace;
-      }
-
-      .about-body {
-        max-width: 70ch;
-        color: var(--ink-muted);
-        font-size: 1.02rem;
-      }
-      .about-body strong {
-        color: var(--ink);
-        font-weight: 600;
-      }
-
-      /* PROJECTS */
-      .project {
-        border-top: 1px solid var(--navy-line);
-        padding: 26px 0;
-        display: grid;
-        grid-template-columns: 90px 1fr;
-        gap: 18px;
-      }
-      .project:first-of-type {
-        border-top: none;
-      }
-      .project .idx {
-        font-family: "IBM Plex Mono", monospace;
-        color: var(--amber);
-        font-size: 0.85rem;
-        padding-top: 4px;
-      }
-      .project h3 {
-        font-size: 1.15rem;
-        margin-bottom: 8px;
-        color: var(--ink);
-      }
-      .project .role-tag {
-        display: inline-block;
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.7rem;
-        color: var(--cyan);
-        border: 1px solid rgba(95, 212, 208, 0.35);
-        padding: 2px 8px;
-        border-radius: 20px;
-        margin-bottom: 12px;
-        letter-spacing: 0.04em;
-      }
-      .project ul {
-        margin: 0;
-        padding-left: 18px;
-        color: var(--ink-muted);
-        font-size: 0.96rem;
-      }
-      .project li {
-        margin-bottom: 6px;
-      }
-      .stack {
-        margin-top: 12px;
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.76rem;
-        color: var(--ink-muted);
-      }
-      .stack span {
-        color: var(--amber);
-      }
-
-      @media (max-width: 640px) {
-        .project {
-          grid-template-columns: 1fr;
-        }
-        .project .idx {
-          padding-top: 0;
-        }
-      }
-
-      /* SKILLS */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 0;
-        border-left: 1px solid var(--navy-line);
-        border-top: 1px solid var(--navy-line);
-      }
-      .skill-group {
-        padding: 20px 22px;
-        border-right: 1px solid var(--navy-line);
-        border-bottom: 1px solid var(--navy-line);
-      }
-      .skill-group h3 {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.72rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--cyan);
-        margin-bottom: 12px;
-      }
-      .skill-group ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .skill-group li {
-        font-size: 0.94rem;
-        color: var(--ink);
-        padding: 5px 0;
-        border-bottom: 1px dashed var(--navy-line);
-      }
-      .skill-group li:last-child {
-        border-bottom: none;
-      }
-
-      /* CERTS / TIMELINE */
-      .cert-row {
-        display: grid;
-        grid-template-columns: 130px 1fr;
-        gap: 18px;
-        padding: 16px 0;
-        border-top: 1px solid var(--navy-line);
-        align-items: baseline;
-      }
-      .cert-row:first-of-type {
-        border-top: none;
-      }
-      .cert-date {
-        font-family: "IBM Plex Mono", monospace;
-        color: var(--amber);
-        font-size: 0.82rem;
-      }
-      .cert-title {
-        color: var(--ink);
-        font-weight: 500;
-      }
-      .cert-meta {
-        color: var(--ink-muted);
-        font-size: 0.88rem;
-        margin-top: 2px;
-      }
-      @media (max-width: 640px) {
-        .cert-row {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* CONTACT */
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-      }
-      .contact-card {
-        border: 1px solid var(--navy-line-strong);
-        padding: 20px;
-      }
-      .contact-card .label {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--ink-muted);
-        margin-bottom: 8px;
-      }
-      .contact-card a {
-        font-size: 1.02rem;
-        text-decoration: none;
-        color: var(--ink);
-        font-weight: 500;
-      }
-      .contact-card a:hover {
-        color: var(--amber);
-      }
-
-      footer {
-        text-align: center;
-        padding: 40px 24px 60px;
-        color: var(--ink-muted);
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 0.76rem;
-        letter-spacing: 0.04em;
-      }
-
-      @media (prefers-reduced-motion: no-preference) {
-        .reveal {
-          opacity: 0;
-          transform: translateY(14px);
-          transition:
-            opacity 0.6s ease,
-            transform 0.6s ease;
-        }
-        .reveal.is-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="hero">
-      <div class="hero-inner">
-        <div class="eyebrow">Portfolio — Sheet 00 / Cover</div>
-        <h1>Keamogetswe Oratile Modiakgotla</h1>
-        <p class="role">
-          Aspiring software developer, final-year BSc Computer Science —
-          curious, adaptable, and building toward a software engineering role.
-        </p>
-
-        <div class="titleblock mono">
-          <div class="cell">
-            <div class="label">Drawn by</div>
-            <div class="value">K. O. Modiakgotla</div>
-          </div>
-          <div class="cell">
-            <div class="label">Institution</div>
-            <div class="value">Wits, Johannesburg</div>
-          </div>
-          <div class="cell">
-            <div class="label">Status</div>
-            <div class="value">Open to junior roles</div>
-          </div>
-          <div class="cell">
-            <div class="label">Rev.</div>
-            <div class="value">2026</div>
-          </div>
+<main>
+  <section class="hero wrap" style="border-top:none;">
+    <div class="hero-grid">
+      <div>
+        <h1>Keamogetswe<br><span>Modiakgotla</span></h1>
+        <div class="tagline-row">{ brains · determination · impact }</div>
+        <div class="tagline-quote">
+          She didn't ask for a way in.<br>
+          She opened a terminal and made one.<br>
+          This is the story still being written.
         </div>
-
-        <nav class="spec">
-          <a href="#about">01 About</a>
-          <a href="#projects">02 Projects</a>
-          <a href="#skills">03 Skills</a>
-          <a href="#certifications">04 Certifications</a>
-          <a href="#contact">05 Contact</a>
-        </nav>
+        <div class="dot-grid">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
       </div>
-    </header>
 
-    <main class="wrap">
-      <section id="about" class="sheet reveal">
-        <span class="cm-tr"></span><span class="cm-bl"></span>
-        <span class="sheet-label">Sheet 01 — About</span>
-        <h2>About</h2>
-        <p class="sheet-sub">Who I am, in brief</p>
-        <p class="about-body">
-          I'm a final-year <strong>BSc Computer Science</strong> student at the
-          <strong>University of the Witwatersrand</strong>, with hands-on
-          experience across software development, Agile teamwork, and mobile and
-          web application delivery. I've led a development team as
-          <strong>Scrum Master</strong> on a real-world web application, built
-          an Android app end-to-end, and I keep adding to that base through AI,
-          cybersecurity, and data science programmes. I'm looking for a role —
-          junior developer, technical operator, or similar — where I can keep
-          learning fast, take ownership of real problems, and grow into a
-          stronger engineer.
-        </p>
-      </section>
+      <div>
+        <div class="code-panel">
+          <div><span class="c2">// her stack</span></div>
+          <div>&nbsp;</div>
+          <div><span class="c1">function</span> buildTheFuture() {</div>
+          <div>&nbsp;&nbsp;<span class="c1">const</span> passion = <span class="c2">true</span>;</div>
+          <div>&nbsp;&nbsp;<span class="c1">while</span>(passion) {</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;code();</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;build();</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;deploy();</div>
+          <div>&nbsp;&nbsp;}</div>
+          <div>}<span class="cursor"></span></div>
+        </div>
+        <div class="stack-row">
+          <span class="stack-chip">Java</span>
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">C++</span>
+          <span class="stack-chip">Android Studio</span>
+        </div>
+      </div>
+    </div>
 
-      <section id="projects" class="sheet reveal">
-        <span class="cm-tr"></span><span class="cm-bl"></span>
-        <span class="sheet-label">Sheet 02 — Projects</span>
-        <h2>Projects</h2>
-        <p class="sheet-sub">Selected technical work</p>
+    <div class="home-nav-cards">
+      <a class="home-nav-card" href="about.html">
+        <span class="eyebrow">Who I Am</span>
+        <h3>About</h3>
+        <p>My background, and the skills I bring to the table.</p>
+      </a>
+      <a class="home-nav-card" href="projects.html">
+        <span class="eyebrow">What I've Built</span>
+        <h3>Projects</h3>
+        <p>Web apps, mobile apps, and design work I've shipped.</p>
+      </a>
+      <a class="home-nav-card" href="certificates.html">
+        <span class="eyebrow">My Growth</span>
+        <h3>Certificates</h3>
+        <p>Programmes and courses I've completed along the way.</p>
+      </a>
+      <a class="home-nav-card" href="contact.html">
+        <span class="eyebrow">Get In Touch</span>
+        <h3>Contact</h3>
+        <p>Reach out about a role, a project, or just to say hi.</p>
+      </a>
+    </div>
+  </section>
+</main>
 
-        <div class="project">
-          <div class="idx">01</div>
-          <div>
-            <span class="role-tag">Scrum Master</span>
-            <h3>Community Clinic Appointment &amp; Queue Management System</h3>
-            <ul>
-              <li>
-                Led a student team as Scrum Master through an Agile, CI/CD,
-                test-driven build of a public web app for South African
-                community clinics.
-              </li>
-              <li>
-                Ran sprint ceremonies, managed the product backlog, and
-                coordinated task allocation across the team.
-              </li>
-              <li>
-                Contributed directly to design, development, and testing of core
-                features — appointment booking, live queue status, and clinic
-                search seeded from a real national health facility dataset.
-              </li>
-            </ul>
-            <div class="stack">
-              <span>Stack —</span> Agile / Scrum · Web app · Third-party
-              identity verification · Public dataset integration
-            </div>
-          </div>
-        </div>
+<footer>© 2026 Keamogetswe Oratile Modiakgotla</footer>
 
-        <div class="project">
-          <div class="idx">02</div>
-          <div>
-            <span class="role-tag">Mobile Developer</span>
-            <h3>Restaurant Order Tracking App</h3>
-            <ul>
-              <li>
-                Built an Android app giving customers real-time visibility into
-                how far along their food order is.
-              </li>
-              <li>
-                Connected the app to a PHP backend and MySQL database to drive
-                live order-status updates.
-              </li>
-              <li>
-                Contributed across frontend, backend, and feature development.
-              </li>
-            </ul>
-            <div class="stack">
-              <span>Stack —</span> Android Studio · Java · PHP · MySQL
-            </div>
-          </div>
-        </div>
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', ()=>{
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
 
-        <div class="project">
-          <div class="idx">03</div>
-          <div>
-            <span class="role-tag">Co-Designer</span>
-            <h3>StewardTech</h3>
-            <ul>
-              <li>
-                Co-designed a digital platform concept under Enactus at the Wits
-                E-Hub, connecting youth to micro-opportunities and
-                skill-building experiences.
-              </li>
-              <li>
-                Applied design-thinking methods and collaborative innovation
-                processes across the concept's full user flow.
-              </li>
-            </ul>
-            <div class="stack">
-              <span>Stack —</span> Design thinking · Product concepting · UX
-              flow design
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="sheet reveal">
-        <span class="cm-tr"></span><span class="cm-bl"></span>
-        <span class="sheet-label">Sheet 03 — Skills</span>
-        <h2>Skills</h2>
-        <p class="sheet-sub">Languages, tools, and platforms</p>
-
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Languages</h3>
-            <ul>
-              <li>Java</li>
-              <li>Python</li>
-              <li>C++</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Mobile</h3>
-            <ul>
-              <li>Android Studio</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Data &amp; backend</h3>
-            <ul>
-              <li>MySQL</li>
-              <li>PHP</li>
-              <li>Microsoft Excel</li>
-              <li>Firebase</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Tools &amp; workflow</h3>
-            <ul>
-              <li>GitHub</li>
-              <li>VS Code</li>
-              <li>Kaggle</li>
-              <li>Agile / Scrum</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="certifications" class="sheet reveal">
-        <span class="cm-tr"></span><span class="cm-bl"></span>
-        <span class="sheet-label">Sheet 04 — Certifications</span>
-        <h2>Certifications &amp; programmes</h2>
-        <p class="sheet-sub">Continuous learning, in order</p>
-
-        <div class="cert-row">
-          <div class="cert-date">2026-06</div>
-          <div>
-            <div class="cert-title">
-              Python — Kaggle Certificate of Completion
-            </div>
-            <div class="cert-meta">Kaggle Learn</div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2026-05</div>
-          <div>
-            <div class="cert-title">GenAI Course for Software Engineers</div>
-            <div class="cert-meta">WeThinkCode_</div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2026-05</div>
-          <div>
-            <div class="cert-title">
-              Data Science &amp; Analytics Internship — completed with Letter of
-              Recommendation
-            </div>
-            <div class="cert-meta">
-              Future Interns · 1-month internship, April–May 2026
-            </div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2026</div>
-          <div>
-            <div class="cert-title">
-              AMLD Africa 2026 (4th edition) — Certificate of Attendance
-            </div>
-            <div class="cert-meta">
-              Applied Machine Learning Days Africa, Johannesburg
-            </div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2026</div>
-          <div>
-            <div class="cert-title">ATF AI Challenge — Participant</div>
-            <div class="cert-meta">
-              Pan-African hands-on AI programme for students and recent
-              graduates
-            </div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2026-03</div>
-          <div>
-            <div class="cert-title">
-              Southern Africa–Netherlands Cyber Security School — Participant
-            </div>
-            <div class="cert-meta">Cybersecurity training programme</div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2026</div>
-          <div>
-            <div class="cert-title">
-              Journey to Employability and Economic Participation (JEEP) —
-              Co-Curricular Transcript Programme
-            </div>
-            <div class="cert-meta">
-              Wits, workshops in personal branding, CVs, interviews, and
-              LinkedIn
-            </div>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div class="cert-date">2024–Present</div>
-          <div>
-            <div class="cert-title">
-              Coding &amp; Digital Innovation Society — Member
-            </div>
-            <div class="cert-meta">
-              Wits-recognised society; where data analysis and Microsoft Excel
-              skills were first learned
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="sheet reveal">
-        <span class="cm-tr"></span><span class="cm-bl"></span>
-        <span class="sheet-label">Sheet 05 — Contact</span>
-        <h2>Contact</h2>
-        <p class="sheet-sub">Get in touch</p>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="label">GitHub</div>
-            <a
-              href="https://github.com/KeamogetsweModiakgotla"
-              target="_blank"
-              rel="noopener"
-              >github.com/KeamogetsweModiakgotla</a
-            >
-          </div>
-          <div class="contact-card">
-            <div class="label">Email</div>
-            <a href="mailto:oratilemodiakgotla2@gmail .com"
-              >oratilemodiakgotla2@gmail.com</a
-            >
-          </div>
-          <div class="contact-card">
-            <div class="label">Kaggle</div>
-            <a
-              href="https://www.kaggle.com/keaora"
-              target="_blank"
-              rel="noopener"
-              >kaggle.com/keaora</a
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>Sheet 05 of 05 — end of document</footer>
-
-    <script>
-      const revealEls = document.querySelectorAll(".reveal");
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("is-visible");
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 },
-      );
-      revealEls.forEach((el) => io.observe(el));
-    </script>
-  </body>
+</body>
 </html>

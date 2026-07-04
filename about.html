@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Keamogetswe Modiakgotla</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Keamogetswe</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">home</a>
+      <a href="about.html" class="active">about</a>
+      <a href="projects.html">projects</a>
+      <a href="certificates.html">certificates</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">Who I Am</span>
+    <h1>About Me</h1>
+  </div>
+
+  <section style="border-top:none; padding-top:10px;">
+    <div class="about-body">
+      <p>
+        I'm a final-year <strong>BSc Computer Science</strong> student at the
+        <strong>University of the Witwatersrand</strong>, with hands-on experience across software development,
+        Agile teamwork, and mobile and web application delivery. I've led a development team as
+        <strong>Scrum Master</strong> on a real-world web application, built an Android app end-to-end, and
+        contributed to a digital platform concept as part of a design team.
+      </p>
+      <p>
+        Beyond building, I'm genuinely curious about how systems work — which has pulled me into
+        <strong>data science, artificial intelligence, and cybersecurity</strong> alongside my core coursework.
+        I keep adding to that through hands-on programmes and certifications, and I'm always looking for the next
+        thing to learn. My goal is to grow into a strong, well-rounded software engineer who can take real
+        problems from idea to working product.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">What I Know</span>
+    <h2>My Skills</h2>
+    <div class="skills-grid" style="margin-top:20px;">
+      <div class="skill-card">
+        <div class="head">Programming Languages</div>
+        <span class="tag">Java</span><span class="tag">Python</span><span class="tag">C++</span>
+      </div>
+      <div class="skill-card">
+        <div class="head">Mobile Development</div>
+        <span class="tag">Android Studio</span>
+      </div>
+      <div class="skill-card">
+        <div class="head">Data &amp; Backend</div>
+        <span class="tag">MySQL</span><span class="tag">PHP</span><span class="tag">Microsoft Excel</span><span class="tag">Firebase</span>
+      </div>
+      <div class="skill-card">
+        <div class="head">Tools &amp; Workflow</div>
+        <span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Kaggle</span><span class="tag">Agile / Scrum</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Keamogetswe Oratile Modiakgotla</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', ()=>{
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>
