@@ -1,82 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keamogetswe Modiakgotla — Portfolio</title>
-<meta name="description" content="Portfolio of Keamogetswe Oratile Modiakgotla, Computer Science student at the University of the Witwatersrand.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keamogetswe Modiakgotla — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Keamogetswe Oratile Modiakgotla, Computer Science student at the University of the Witwatersrand."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="brand">Keamogetswe</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">Keamogetswe</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+    <main>
+      <section class="hero wrap" style="border-top: none">
+        <div class="hero-grid">
+          <div>
+            <h1>Keamogetswe<br /><span>Modiakgotla</span></h1>
+            <div class="tagline-row">{ brains · determination · impact }</div>
+            <div class="dot-grid">
+              <span></span><span></span><span></span> <span></span><span></span
+              ><span></span> <span></span><span></span><span></span>
+            </div>
+          </div>
 
-<main>
-  <section class="hero wrap" style="border-top:none;">
-    <div class="hero-grid">
-      <div>
-        <h1>Keamogetswe<br><span>Modiakgotla</span></h1>
-        <div class="tagline-row">{ brains · determination · impact }</div>
-        <div class="dot-grid">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
+          <div class="photo-frame">
+            <span class="corner c-tl"></span><span class="corner c-br"></span>
+            <img src="assets/profile1.jpeg" alt="Keamogetswe Modiakgotla" />
+          </div>
         </div>
-      </div>
 
-      <div class="photo-frame">
-        <span class="corner c-tl"></span><span class="corner c-br"></span>
-        <img src="assets/profile2.jpeg" alt="Keamogetswe Modiakgotla">
-      </div>
-    </div>
+        <div class="home-nav-cards">
+          <a class="home-nav-card" href="about.html">
+            <span class="eyebrow">Who I Am</span>
+            <h3>About</h3>
+            <p>My background, and the skills I bring to the table.</p>
+          </a>
+          <a class="home-nav-card" href="projects.html">
+            <span class="eyebrow">What I've Built</span>
+            <h3>Projects</h3>
+            <p>Web apps, mobile apps, and design work I've shipped.</p>
+          </a>
+          <a class="home-nav-card" href="certificates.html">
+            <span class="eyebrow">My Growth</span>
+            <h3>Certificates</h3>
+            <p>Programmes and courses I've completed along the way.</p>
+          </a>
+          <a class="home-nav-card" href="contact.html">
+            <span class="eyebrow">Get In Touch</span>
+            <h3>Contact</h3>
+            <p>Reach out about a role, a project, or just to say hi.</p>
+          </a>
+        </div>
+      </section>
+    </main>
 
-    <div class="home-nav-cards">
-      <a class="home-nav-card" href="about.html">
-        <span class="eyebrow">Who I Am</span>
-        <h3>About</h3>
-        <p>My background, and the skills I bring to the table.</p>
-      </a>
-      <a class="home-nav-card" href="projects.html">
-        <span class="eyebrow">What I've Built</span>
-        <h3>Projects</h3>
-        <p>Web apps, mobile apps, and design work I've shipped.</p>
-      </a>
-      <a class="home-nav-card" href="certificates.html">
-        <span class="eyebrow">My Growth</span>
-        <h3>Certificates</h3>
-        <p>Programmes and courses I've completed along the way.</p>
-      </a>
-      <a class="home-nav-card" href="contact.html">
-        <span class="eyebrow">Get In Touch</span>
-        <h3>Contact</h3>
-        <p>Reach out about a role, a project, or just to say hi.</p>
-      </a>
-    </div>
-  </section>
-</main>
+    <footer>© 2026 Keamogetswe Oratile Modiakgotla</footer>
 
-<footer>© 2026 Keamogetswe Oratile Modiakgotla</footer>
-
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', ()=>{
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-</script>
-
-</body>
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", isOpen);
+      });
+    </script>
+  </body>
 </html>
